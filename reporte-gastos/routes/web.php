@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/test', function () {return 'Hola test'; });
+
+Route::get('/array', function () {return ['saludo'=>'Hola', 'nombre'=>'Platzi'];});
+
+Route::get('/vista', function () {return view('vista');});
