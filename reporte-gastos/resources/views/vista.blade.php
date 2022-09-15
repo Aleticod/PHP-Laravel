@@ -82,6 +82,7 @@
             <div class="content">
                 <div class="title m-b-md">
                     Mi primera vista
+                    {{ $nombre }}
                 </div>
 
                 <div class="links">
