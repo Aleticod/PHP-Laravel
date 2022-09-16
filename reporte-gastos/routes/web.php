@@ -11,9 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index');
+Route::get('/dashboard', 'DashboardController@index');
+Route::resource('/gastos', 'GastoController');
+// Route::resource('/detalleGastos', 'DetalleGastoController');
+Route::get('/gastos/{gasto}/confirmarEnvioEmail', 'GastoController@confirmarEnvioEmail')->name('gastos.confirmarEnvioEmail');
+Route::post('/gastos/{gasto}/enviarEmail', 'GastoController@enviarEmail')->name('gastos.enviarEmail');
+Route::get('/gastos/{gasto}/detalleGastos/create', 'DetalleGastoController@create')->name('detalleGastos.create');
+Route::post('/gastos/{gasto}/detalleGastos', 'DetalleGastoController@store')->name('detalleGastos.store');
 
 Route::get('/test', function () {return 'Hola test'; });
 

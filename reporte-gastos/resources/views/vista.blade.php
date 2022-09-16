@@ -82,7 +82,12 @@
             <div class="content">
                 <div class="title m-b-md">
                     Mi primera vista
-                    {{ $nombre }}
+                    @isset($nombre)
+                        {{ $nombre }}
+                    @else
+                        <br>
+                        <p>El Wilhelm es feo y gordo</p>
+                    @endisset
                 </div>
 
                 <div class="links">
